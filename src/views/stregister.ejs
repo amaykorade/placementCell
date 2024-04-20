@@ -1,0 +1,155 @@
+<form action="/stregister" method="POST">
+  <div class="container">
+    <div class="card" style="width: 50rem">
+      <h3>Students Details</h3>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          required
+        />
+        <label for="name">Name</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="college_name"
+          name="college_name"
+          required
+        />
+        <label for="college_name">College name</label>
+      </div>
+      <!-- Radio Button Group -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="status"
+          id="placed"
+          value="placed"
+          checked
+        />
+        <label class="form-check-label" for="placed">Placed</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="status"
+          id="notPlaced"
+          value="notPlaced"
+        />
+        <label class="form-check-label" for="notPlaced">Not Placed</label>
+      </div>
+    </div>
+    <div class="card" style="width: 50rem">
+      <h3>Course Scores</h3>
+      <div class="mb-3">
+        <label for="dsa_score" class="form-label">DSA Final Score</label>
+        <input
+          type="number"
+          class="form-control"
+          id="dsa_score"
+          name="dsa_score"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="webd_score" class="form-label">WebD Final Score</label>
+        <input
+          type="number"
+          class="form-control"
+          id="webd_score"
+          name="webd_score"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="react_score" class="form-label">React Final Score</label>
+        <input
+          type="number"
+          class="form-control"
+          id="react_score"
+          name="react_score"
+        />
+      </div>
+    </div>
+    <div class="card" style="width: 50rem">
+      <select
+        class="form-select"
+        aria-label="Company name"
+        ,
+        name="company_name"
+      >
+        <option selected>Company name</option>
+        <% data.map(data => { %>
+        <option value="<%= data.name %> "><%= data.name %></option>
+        <% }) %>
+      </select>
+      <div class="mb-3">
+        <label for="interview_date" class="form-label">Interview Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="interview_date"
+          name="interview_date"
+          placeholder="Interview Date"
+        />
+      </div>
+    </div>
+    <div class="card" style="width: 50rem">
+      <h3>Results</h3>
+      <div class="form-floating">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="result"
+            id="flexRadioDefault1"
+            value="passed"
+          />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Passed
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="result"
+            id="flexRadioDefault2"
+            value="fail"
+          />
+          <label class="form-check-label" for="flexRadioDefault2"> Fail </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="result"
+            id="flexRadioDefault2"
+            value="on_hold"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            On Hold
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="result"
+            id="flexRadioDefault2"
+            value="didn't_attempt"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Didn't Attempt
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">Add</button>
+</form>

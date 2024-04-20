@@ -1,0 +1,41 @@
+<h1>Interviews</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Company name</th>
+      <th scope="col">Area</th>
+      <th scope="col">Vacancies</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Last date</th>
+      <th scope="col">View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% intData.map(data => { %>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= data.name %></td>
+      <td><%= data.area%></td>
+      <td><%= data.vacancies%></td>
+      <td>
+        <%= new Date(data.createdAt).toLocaleDateString('en-US', { weekday:
+        'long', year: 'numeric', month: 'long', day: 'numeric' })%>
+      </td>
+      <td>
+        <%= new Date(data.dayAndDate).toLocaleDateString('en-US', {weekday:
+        'long', year: 'numeric', month: 'long', day: 'numeric'}) %>
+      </td>
+      <td>
+        <button>
+          <a
+            class="link-opacity-100"
+            href="/studentsApplied?name=<%=data.name%>"
+            >View</a
+          >
+        </button>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
