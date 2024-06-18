@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-const url = process.env.DB_URL;
+const url = process.env.DB_URL || 4000;
 
 export const connectUsingMongoose = async () => {
     try {
