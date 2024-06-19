@@ -69,4 +69,9 @@ server.listen(3000, () => {
     console.log('Server is running on port 3000');
 
     connectUsingMongoose();
-})
+});
+
+// mongodb atlas keys for Placement
+// username - amaykorade
+// password - ICTgBgT5iDoRhYBT
+// string - mongodb+srv://amaykorade:ICTgBgT5iDoRhYBT@placement.vxucwnw.mongodb.net/?retryWrites=true&w=majority&appName=Placement
